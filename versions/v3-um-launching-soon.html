@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UM lanching soon — v3</title>
+<!--
+  Snapshot copy for version comparison — flow testing only.
+  Source: PR #1 (update-welcome-page-style branch), merged into main.
+  Design System Version: UUIF 9.2 (tokens only; full nav shell intentionally omitted per request)
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --uuif-text-primary: #191c25;
+    --uuif-text-secondary: #4a618f;
+    --uuif-text-contrast: #ffffff;
+    --uuif-surface-container: #ffffff;
+    --uuif-surface-bg: #fafafa;
+    --uuif-surface-primary: #5b74a7;
+    --uuif-border-tertiary: #cccccc;
+    --uuif-border-secondary: #78a3e5;
+    --uuif-brand-navy: #001b50;
+    --uuif-brand-orange: #ff5d00;
+    --uuif-sp-2: 8px;
+    --uuif-sp-3: 16px;
+    --uuif-sp-4: 24px;
+    --uuif-sp-5: 32px;
+    --uuif-radius-8: 8px;
+    --uuif-radius-pill: 88px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--uuif-sp-4);
+    background: #bcbcbc;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--uuif-text-primary);
+  }
+
+  .version-tag {
+    margin-bottom: var(--uuif-sp-3);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--uuif-text-secondary);
+  }
+
+  .uuif-card {
+    width: 100%;
+    max-width: 480px;
+    padding: var(--uuif-sp-5);
+    background: var(--uuif-surface-container);
+    border: 1px solid var(--uuif-border-tertiary);
+    border-radius: 24px;
+    text-align: center;
+  }
+
+  .uuif-swoosh { display: block; margin: 0 auto var(--uuif-sp-4); }
+
+  h1 {
+    margin: 0 0 var(--uuif-sp-2);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--uuif-brand-navy);
+  }
+
+  p {
+    margin: 0 0 var(--uuif-sp-4);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--uuif-text-secondary);
+  }
+
+  .uuif-actions {
+    display: flex;
+    gap: var(--uuif-sp-2);
+    justify-content: center;
+  }
+
+  .uuif-btn {
+    padding: 5.5px 20px;
+    border-radius: var(--uuif-radius-pill);
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .uuif-btn--secondary {
+    background: var(--uuif-surface-container);
+    border: 1px solid var(--uuif-border-secondary);
+    color: var(--uuif-text-secondary);
+  }
+
+  .uuif-btn--primary {
+    background: var(--uuif-surface-primary);
+    border: 1px solid var(--uuif-surface-primary);
+    color: var(--uuif-text-contrast);
+  }
+
+  .uuif-btn:hover {
+    border-color: var(--uuif-brand-orange);
+    color: var(--uuif-brand-orange);
+  }
+
+  .back-link {
+    margin-top: var(--uuif-sp-4);
+    font-size: 13px;
+    color: var(--uuif-text-secondary);
+    text-decoration: none;
+  }
+
+  .back-link:hover { color: var(--uuif-brand-orange); }
+</style>
+</head>
+<body>
+  <div class="version-tag">Version 3 — UM Launching Soon (live on main)</div>
+  <main class="uuif-card">
+    <svg class="uuif-swoosh" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+      <path fill="#FF5D00" d="M20 2a18 18 0 1 0 12.7 30.7l-4.2-4.2A12 12 0 1 1 32 20h6A18 18 0 0 0 20 2Z"/>
+    </svg>
+    <h1>UM lanching soon</h1>
+    <p>This is a placeholder welcome page used to test the flow. Replace this content once the real screen is defined.</p>
+    <div class="uuif-actions">
+      <button type="button" class="uuif-btn uuif-btn--secondary">Skip</button>
+      <button type="button" class="uuif-btn uuif-btn--primary">Get started</button>
+    </div>
+  </main>
+  <a class="back-link" href="../versions.html">&larr; Back to all versions</a>
+</body>
+</html>
