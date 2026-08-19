@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Version History</title>
+<!--
+  Version catalog page — flow testing only.
+  Design System Version: UUIF 9.2 (tokens only; full nav shell intentionally omitted per request)
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --uuif-text-primary: #191c25;
+    --uuif-text-secondary: #4a618f;
+    --uuif-text-contrast: #ffffff;
+    --uuif-surface-container: #ffffff;
+    --uuif-surface-bg: #fafafa;
+    --uuif-surface-primary: #5b74a7;
+    --uuif-surface-tertiary: #f6f8fe;
+    --uuif-border-tertiary: #cccccc;
+    --uuif-border-secondary: #78a3e5;
+    --uuif-brand-navy: #001b50;
+    --uuif-brand-orange: #ff5d00;
+    --uuif-brand-green: #59a02e;
+    --uuif-fill-green-xxx-lighter: #e3efdc;
+    --uuif-sp-2: 8px;
+    --uuif-sp-3: 16px;
+    --uuif-sp-4: 24px;
+    --uuif-sp-5: 32px;
+    --uuif-radius-4: 4px;
+    --uuif-radius-8: 8px;
+    --uuif-radius-pill: 88px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    padding: var(--uuif-sp-6, 48px) var(--uuif-sp-4);
+    background: var(--uuif-surface-bg);
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--uuif-text-primary);
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin: 0 0 var(--uuif-sp-2);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--uuif-brand-navy);
+  }
+
+  .subtitle {
+    margin: 0 0 var(--uuif-sp-5);
+    font-size: 14px;
+    color: var(--uuif-text-secondary);
+  }
+
+  .version-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--uuif-sp-3);
+  }
+
+  .version-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--uuif-sp-3);
+    padding: var(--uuif-sp-4);
+    background: var(--uuif-surface-container);
+    border: 1px solid var(--uuif-border-tertiary);
+    border-radius: var(--uuif-radius-8);
+    text-decoration: none;
+    transition: border-color 0.15s ease;
+  }
+
+  .version-card:hover {
+    border-color: var(--uuif-brand-orange);
+  }
+
+  .swatch {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--uuif-radius-4);
+    border: 1px solid var(--uuif-border-tertiary);
+  }
+
+  .version-body { flex: 1; }
+
+  .version-title-row {
+    display: flex;
+    align-items: center;
+    gap: var(--uuif-sp-2);
+    margin-bottom: 4px;
+  }
+
+  .version-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--uuif-text-primary);
+  }
+
+  .status-chip {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: var(--uuif-radius-4);
+  }
+
+  .status-chip--live {
+    background: var(--uuif-fill-green-xxx-lighter);
+    color: var(--uuif-brand-green);
+    border: 1px solid var(--uuif-brand-green);
+  }
+
+  .status-chip--draft {
+    background: var(--uuif-surface-tertiary);
+    color: var(--uuif-text-secondary);
+    border: 1px solid var(--uuif-border-secondary);
+  }
+
+  .version-desc {
+    margin: 0 0 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--uuif-text-secondary);
+  }
+
+  .version-meta {
+    font-size: 13px;
+    color: var(--uuif-text-secondary);
+  }
+
+  .version-meta code {
+    font-family: 'Nunito Sans', sans-serif;
+    background: var(--uuif-surface-tertiary);
+    padding: 1px 6px;
+    border-radius: var(--uuif-radius-4);
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Version history</h1>
+    <p class="subtitle">Rendered snapshots of each welcome page iteration. Select a version to view it.</p>
+
+    <div class="version-list">
+      <a class="version-card" href="versions/v1-original.html">
+        <div class="swatch" style="background:#fafafa;"></div>
+        <div class="version-body">
+          <div class="version-title-row">
+            <span class="version-title">v1 — Original</span>
+            <span class="status-chip status-chip--live">Live on main</span>
+          </div>
+          <p class="version-desc">Baseline placeholder welcome page: "Welcome" heading on a #fafafa background. Currently deployed to the live site.</p>
+          <div class="version-meta">Branch: <code>main</code></div>
+        </div>
+      </a>
+
+      <a class="version-card" href="versions/v2-ztp-background.html">
+        <div class="swatch" style="background:#ececec;"></div>
+        <div class="version-body">
+          <div class="version-title-row">
+            <span class="version-title">v2 — ZTP background exploration</span>
+            <span class="status-chip status-chip--draft">Not merged</span>
+          </div>
+          <p class="version-desc">Heading changed to "Welcome ZTP" and background changed to #ececec. Exploratory change, not yet merged into main.</p>
+          <div class="version-meta">Branch: <code>feature/background-image</code></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
