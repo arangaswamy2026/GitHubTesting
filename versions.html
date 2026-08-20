@@ -3,36 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Version History</title>
-<!--
-  Version catalog page — flow testing only.
-  Design System Version: UUIF 9.2 (tokens only; full nav shell intentionally omitted per request)
--->
+<title>UM Landing Page — Design Versions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 <style>
   :root {
-    --uuif-text-primary: #191c25;
-    --uuif-text-secondary: #4a618f;
-    --uuif-text-contrast: #ffffff;
-    --uuif-surface-container: #ffffff;
-    --uuif-surface-bg: #fafafa;
-    --uuif-surface-primary: #5b74a7;
-    --uuif-surface-tertiary: #f6f8fe;
-    --uuif-border-tertiary: #cccccc;
-    --uuif-border-secondary: #78a3e5;
-    --uuif-brand-navy: #001b50;
-    --uuif-brand-orange: #ff5d00;
-    --uuif-brand-green: #59a02e;
-    --uuif-fill-green-xxx-lighter: #e3efdc;
-    --uuif-sp-2: 8px;
-    --uuif-sp-3: 16px;
-    --uuif-sp-4: 24px;
-    --uuif-sp-5: 32px;
-    --uuif-radius-4: 4px;
-    --uuif-radius-8: 8px;
-    --uuif-radius-pill: 88px;
+    --primary-color: #c44ba8;
+    --primary-light: #d96cc6;
+    --text-primary: #191c25;
+    --text-secondary: #646464;
+    --text-contrast: #ffffff;
+    --surface-container: #ffffff;
+    --surface-bg: #f5f5f5;
+    --border-color: #e0e0e0;
+    --success-color: #59a02e;
+    --success-light: #e3efdc;
+    --sp-2: 8px;
+    --sp-3: 16px;
+    --sp-4: 24px;
+    --sp-5: 32px;
+    --sp-6: 48px;
+    --radius-2: 4px;
+    --radius-4: 12px;
+    --radius-full: 88px;
   }
 
   * { box-sizing: border-box; }
@@ -40,168 +34,411 @@
   body {
     margin: 0;
     min-height: 100vh;
-    padding: var(--uuif-sp-6, 48px) var(--uuif-sp-4);
-    background: var(--uuif-surface-bg);
+    padding: var(--sp-6) var(--sp-4);
+    background: linear-gradient(135deg, #f5f5f5 0%, #efefef 100%);
     font-family: 'Nunito Sans', sans-serif;
-    color: var(--uuif-text-primary);
+    color: var(--text-primary);
   }
 
-  .wrap {
-    max-width: 640px;
+  .container {
+    max-width: 720px;
     margin: 0 auto;
   }
 
-  h1 {
-    margin: 0 0 var(--uuif-sp-2);
-    font-size: 26px;
+  /* Header Section */
+  .header {
+    margin-bottom: var(--sp-6);
+  }
+
+  .header-title {
+    margin: 0 0 var(--sp-2);
+    font-size: 32px;
     font-weight: 700;
-    color: var(--uuif-brand-navy);
+    color: var(--text-primary);
   }
 
-  .subtitle {
-    margin: 0 0 var(--uuif-sp-5);
+  .header-subtitle {
+    margin: 0 0 var(--sp-3);
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .project-description {
+    background: var(--surface-container);
+    padding: var(--sp-4);
+    border-radius: var(--radius-4);
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: var(--sp-5);
+  }
+
+  .project-description p {
+    margin: 0;
     font-size: 14px;
-    color: var(--uuif-text-secondary);
+    line-height: 1.6;
+    color: var(--text-secondary);
   }
 
-  .version-list {
+  /* Latest Version Section */
+  .latest-section {
+    margin-bottom: var(--sp-6);
+  }
+
+  .section-title {
+    margin: 0 0 var(--sp-3);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+  }
+
+  .latest-card {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-4);
+    padding: var(--sp-5);
+    background: linear-gradient(135deg, rgba(196, 75, 168, 0.1) 0%, rgba(217, 108, 198, 0.05) 100%);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--radius-4);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-bottom: var(--sp-4);
+  }
+
+  .latest-card:hover {
+    background: linear-gradient(135deg, rgba(196, 75, 168, 0.15) 0%, rgba(217, 108, 198, 0.1) 100%);
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(196, 75, 168, 0.15);
+  }
+
+  .latest-swatch {
+    flex: 0 0 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-2);
+    border: 1px solid var(--border-color);
+    background: var(--primary-color);
+  }
+
+  .latest-body {
+    flex: 1;
+  }
+
+  .latest-title {
+    margin: 0 0 var(--sp-2);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .latest-desc {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .cta-arrow {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 20px;
+    transition: transform 0.2s ease;
+  }
+
+  .latest-card:hover .cta-arrow {
+    transform: translateX(4px);
+  }
+
+  /* Accordion Section */
+  .history-section {
+    margin-top: var(--sp-6);
+  }
+
+  .accordion-wrapper {
     display: flex;
     flex-direction: column;
-    gap: var(--uuif-sp-3);
+    gap: 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-4);
+    overflow: hidden;
+    background: var(--surface-container);
   }
 
-  .version-card {
+  .accordion-item {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .accordion-item:last-child {
+    border-bottom: none;
+  }
+
+  .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--sp-4);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    background: var(--surface-container);
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .accordion-header:hover {
+    background: #fafafa;
+  }
+
+  .accordion-header.open {
+    background: #fafafa;
+  }
+
+  .accordion-content-wrapper {
     display: flex;
     align-items: flex-start;
-    gap: var(--uuif-sp-3);
-    padding: var(--uuif-sp-4);
-    background: var(--uuif-surface-container);
-    border: 1px solid var(--uuif-border-tertiary);
-    border-radius: var(--uuif-radius-8);
-    text-decoration: none;
-    transition: border-color 0.15s ease;
+    gap: var(--sp-3);
+    width: 100%;
   }
 
-  .version-card:hover {
-    border-color: var(--uuif-brand-orange);
-  }
-
-  .swatch {
+  .accordion-swatch {
     flex: 0 0 40px;
     width: 40px;
     height: 40px;
-    border-radius: var(--uuif-radius-4);
-    border: 1px solid var(--uuif-border-tertiary);
+    border-radius: var(--radius-2);
+    border: 1px solid var(--border-color);
   }
 
-  .version-body { flex: 1; }
+  .accordion-info {
+    flex: 1;
+  }
 
-  .version-title-row {
+  .accordion-title-row {
     display: flex;
     align-items: center;
-    gap: var(--uuif-sp-2);
+    gap: var(--sp-2);
     margin-bottom: 4px;
   }
 
-  .version-title {
-    font-size: 16px;
+  .accordion-title {
+    font-size: 15px;
     font-weight: 700;
-    color: var(--uuif-text-primary);
+    color: var(--text-primary);
   }
 
   .status-chip {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     padding: 2px 8px;
-    border-radius: var(--uuif-radius-4);
+    border-radius: var(--radius-2);
+    border: 1px solid;
   }
 
   .status-chip--live {
-    background: var(--uuif-fill-green-xxx-lighter);
-    color: var(--uuif-brand-green);
-    border: 1px solid var(--uuif-brand-green);
+    background: var(--success-light);
+    color: var(--success-color);
+    border-color: var(--success-color);
   }
 
   .status-chip--draft {
-    background: var(--uuif-surface-tertiary);
-    color: var(--uuif-text-secondary);
-    border: 1px solid var(--uuif-border-secondary);
+    background: #f0f0f0;
+    color: var(--text-secondary);
+    border-color: var(--border-color);
   }
 
-  .version-desc {
-    margin: 0 0 8px;
+  .accordion-toggle {
+    flex: 0 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    transition: transform 0.2s ease;
+  }
+
+  .accordion-header.open .accordion-toggle {
+    transform: rotate(180deg);
+  }
+
+  .accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .accordion-body.open {
+    max-height: 500px;
+  }
+
+  .accordion-detail {
+    padding: 0 var(--sp-4) var(--sp-4) var(--sp-4);
+    border-top: 1px solid var(--border-color);
+  }
+
+  .accordion-desc {
+    margin: 0 0 var(--sp-2);
     font-size: 14px;
     line-height: 1.5;
-    color: var(--uuif-text-secondary);
+    color: var(--text-secondary);
   }
 
-  .version-meta {
+  .accordion-meta {
     font-size: 13px;
-    color: var(--uuif-text-secondary);
+    color: var(--text-secondary);
+    margin: 0;
   }
 
-  .version-meta code {
-    font-family: 'Nunito Sans', sans-serif;
-    background: var(--uuif-surface-tertiary);
+  .accordion-meta code {
+    background: #fafafa;
     padding: 1px 6px;
-    border-radius: var(--uuif-radius-4);
+    border-radius: var(--radius-2);
+    font-family: monospace;
+  }
+
+  .accordion-link {
+    display: inline-block;
+    margin-top: var(--sp-3);
+    padding: 8px 16px;
+    background: var(--primary-color);
+    color: var(--text-contrast);
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .accordion-link:hover {
+    background: var(--primary-light);
+  }
+
+  @media (max-width: 600px) {
+    .latest-card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .latest-swatch {
+      width: 50px;
+      height: 50px;
+    }
+
+    .accordion-header {
+      padding: var(--sp-3);
+    }
   }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>Version history</h1>
-    <p class="subtitle">Rendered snapshots of each welcome page iteration. Select a version to view it.</p>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1 class="header-title">UM Landing Page</h1>
+      <p class="header-subtitle">Design iteration and version history</p>
+    </div>
 
-    <div class="version-list">
-      <a class="version-card" href="versions/v1-original.html">
-        <div class="swatch" style="background:#fafafa;"></div>
-        <div class="version-body">
-          <div class="version-title-row">
-            <span class="version-title">v1 — Original</span>
-            <span class="status-chip status-chip--draft">Superseded</span>
-          </div>
-          <p class="version-desc">Baseline placeholder welcome page: "Welcome" heading on a #fafafa background.</p>
-          <div class="version-meta">Branch: <code>main</code></div>
-        </div>
-      </a>
+    <!-- Project Description -->
+    <div class="project-description">
+      <p><strong>About this project:</strong> This is a design exploration repository for the UM (Unified Management) launching page. The page showcases the evolving visual design and user experience across multiple iterations. Explore the latest live version or browse the design history to see how the page has evolved over time.</p>
+    </div>
 
-      <a class="version-card" href="versions/v2-ztp-background.html">
-        <div class="swatch" style="background:#ececec;"></div>
-        <div class="version-body">
-          <div class="version-title-row">
-            <span class="version-title">v2 — ZTP background exploration</span>
-            <span class="status-chip status-chip--draft">Not merged</span>
-          </div>
-          <p class="version-desc">Heading changed to "Welcome ZTP" and background changed to #ececec. Exploratory change, not yet merged into main.</p>
-          <div class="version-meta">Branch: <code>feature/background-image</code></div>
+    <!-- Latest Version -->
+    <div class="latest-section">
+      <h2 class="section-title">Current Live Version</h2>
+      <a class="latest-card" href="index.html">
+        <div class="latest-swatch"></div>
+        <div class="latest-body">
+          <div class="latest-title">v4 — Modern aesthetic redesign</div>
+          <p class="latest-desc">Pink/magenta color scheme with geometric backgrounds, modernized components, and improved typography. Currently deployed on main branch.</p>
         </div>
-      </a>
-
-      <a class="version-card" href="versions/v3-um-launching-soon.html">
-        <div class="swatch" style="background:#bcbcbc;"></div>
-        <div class="version-body">
-          <div class="version-title-row">
-            <span class="version-title">v3 — UM launching soon</span>
-            <span class="status-chip status-chip--draft">Superseded</span>
-          </div>
-          <p class="version-desc">Card corners rounded to 24px, background changed to #bcbcbc, and heading renamed to "UM lanching soon" (via PR #1). Previously deployed to the live site.</p>
-          <div class="version-meta">Branch: <code>main</code> · PR: <code>#1</code></div>
-        </div>
-      </a>
-
-      <a class="version-card" href="versions/v4-modern-redesign.html">
-        <div class="swatch" style="background:#c44ba8;"></div>
-        <div class="version-body">
-          <div class="version-title-row">
-            <span class="version-title">v4 — Modern aesthetic redesign</span>
-            <span class="status-chip status-chip--live">Live on main</span>
-          </div>
-          <p class="version-desc">Complete visual redesign with pink/magenta color scheme, geometric background shapes, modernized button styles, and improved typography hierarchy. Now deployed to the live site (merged via PR #2).</p>
-          <div class="version-meta">Branch: <code>main</code> · PR: <code>#2</code></div>
-        </div>
+        <div class="cta-arrow">→</div>
       </a>
     </div>
+
+    <!-- Version History Accordion -->
+    <div class="history-section">
+      <h2 class="section-title">Design History</h2>
+      <div class="accordion-wrapper">
+        <!-- v3 -->
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="accordion-content-wrapper">
+              <div class="accordion-swatch" style="background:#bcbcbc;"></div>
+              <div class="accordion-info">
+                <div class="accordion-title-row">
+                  <span class="accordion-title">v3 — UM launching soon</span>
+                  <span class="status-chip status-chip--draft">Superseded</span>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-toggle">⌄</div>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-detail">
+              <p class="accordion-desc">Card corners rounded to 24px, background changed to #bcbcbc, and heading renamed to "UM lanching soon" (via PR #1). Previously deployed to the live site.</p>
+              <p class="accordion-meta">Branch: <code>main</code> · PR: <code>#1</code></p>
+              <a class="accordion-link" href="versions/v3-um-launching-soon.html">View v3</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- v2 -->
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="accordion-content-wrapper">
+              <div class="accordion-swatch" style="background:#ececec;"></div>
+              <div class="accordion-info">
+                <div class="accordion-title-row">
+                  <span class="accordion-title">v2 — ZTP background exploration</span>
+                  <span class="status-chip status-chip--draft">Not merged</span>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-toggle">⌄</div>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-detail">
+              <p class="accordion-desc">Heading changed to "Welcome ZTP" and background changed to #ececec. Exploratory change, not yet merged into main.</p>
+              <p class="accordion-meta">Branch: <code>feature/background-image</code></p>
+              <a class="accordion-link" href="versions/v2-ztp-background.html">View v2</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- v1 -->
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="accordion-content-wrapper">
+              <div class="accordion-swatch" style="background:#fafafa;"></div>
+              <div class="accordion-info">
+                <div class="accordion-title-row">
+                  <span class="accordion-title">v1 — Original</span>
+                  <span class="status-chip status-chip--draft">Superseded</span>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-toggle">⌄</div>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-detail">
+              <p class="accordion-desc">Baseline placeholder welcome page: "Welcome" heading on a #fafafa background.</p>
+              <p class="accordion-meta">Branch: <code>main</code></p>
+              <a class="accordion-link" href="versions/v1-original.html">View v1</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <script>
+    function toggleAccordion(header) {
+      header.classList.toggle('open');
+      const body = header.nextElementSibling;
+      body.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
